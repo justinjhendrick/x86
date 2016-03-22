@@ -30,12 +30,12 @@ inner:
   jmp inner
 
 print:
-  mov $1, %rdi
+  mov $1, %rdi # stdout
   movq $1, %rax # value for syscall
   syscall # sys_write(unsigned int fd, const char* buf, size_t count)
 
   # write a newline after each word
-  movq $1, %rdi
+  movq $1, %rdi # stdout
   movq $1, %rax # value for syscall
   movq $NEWLINE, %rsi
   movq $1, %rdx # length
